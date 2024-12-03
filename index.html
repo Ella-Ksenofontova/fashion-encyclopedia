@@ -14,7 +14,7 @@ homepage: 1
     <div class="wrapper col-sm-6 col-md-4">
       <article class="card">
         <div class="card-body">
-          <a href="{{ post.url}}">
+          <a href="{{site.baseurl}}/{{post.url}}">
             <h3>{{ post.custom_title }}</h3>
           </a>
           <span class="blogdate">{{day}} {% case month %}
@@ -51,7 +51,7 @@ homepage: 1
             {% endif %}
 
             {% for category in categories_names %}
-            <a href="/categories/{{category| replace: '_', '-'}}">
+            <a href="categories/{{category| replace: '_', '-'}}">
               {% assign ru_names = site.site_categories | map: "category_name" %}
               {% for item in site_categories %}
                 {% if item == category %}

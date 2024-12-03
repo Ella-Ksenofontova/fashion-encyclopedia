@@ -11,7 +11,7 @@
   {% assign caption = include.gallery_captions[forloop.index0]%}
   <div class="carousel-item {% if include.active_index == forloop.index0 %}active
       {% endif %}">
-    <img src="/assets/{{image}}" alt="{%if caption %}{{caption}}{% else %}{{include.title}}{% endif %}">
+    <img src="assets/{{image}}" alt="{%if caption %}{{caption}}{% else %}{{include.title}}{% endif %}">
     <div class="carousel-caption">
       <p class="d-none d-md-block">{{caption}}</p>
       {% if caption %}

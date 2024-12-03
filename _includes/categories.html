@@ -16,7 +16,7 @@
   {% endif %}
   {% for category in categories_names %}
         <a href=
-        /categories/{{category | replace: "_", "-"}}>
+        categories/{{category | replace: "_", "-"}}>
           {% assign ru_names = site.site_categories | map: "category_name" %}
           {% for item in site_categories %}
             {% if item == category %}

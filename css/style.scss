@@ -20,7 +20,7 @@ body {
   min-width: 100px;
   min-height: 100px;
 
-  background-image: url("/assets/logo.png");
+  background-image: url("../assets/logo.png");
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 500;
@@ -117,7 +117,7 @@ footer {
 .homepage-image,
 .category-image,
 .copyright-image {
-  background-image: url("/assets/homepage-image.png");
+  background-image: url("../assets/homepage-image.png");
 
   .gradient {
     background: linear-gradient(#126290, transparent);
