@@ -39,7 +39,7 @@ layout: default
                     {% endcase %} {{year}}</span>
                   <span class="card-text">{{ post.content |truncatehtml | truncatewords: 10 }}
                   </span><br>
-                  <a href="{{ post.url }}">
+                  <a href="{{site.baseurl}}{{ post.url }}">
                     Читать дальше
                   </a>
               </div>
