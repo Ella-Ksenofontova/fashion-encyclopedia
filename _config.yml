@@ -53,3 +53,6 @@ collections:
 domain: ella-ksenofontova.github.io 
 url: https://ella-ksenofontova.github.io  
 baseurl: /fashion-encyclopedia/
+load_paths:
+    - _sass
+    - node_modules
