@@ -19,15 +19,18 @@ exclude:
   - vendor/ruby/
   - "*.txt"
 
-sass:
-    sass_dir: _sass
-
 lang: ru-RU
 
 plugins:
   - jekyll-paginate
   - jekyll-feed
   - jekyll-redirect-from
+
+sass:
+  sass_dir: _sass
+  load_paths:
+        - _sass
+        - node_modules
 
 paginate: 12
 
@@ -52,7 +55,4 @@ collections:
 
 domain: ella-ksenofontova.github.io 
 url: https://ella-ksenofontova.github.io  
-baseurl: /fashion-encyclopedia/
-load_paths:
-    - _sass
-    - node_modules
+baseurl: /fashion-encyclopedia
