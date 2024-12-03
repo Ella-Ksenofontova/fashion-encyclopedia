@@ -1,0 +1,16 @@
+---
+layout: default
+---
+    {% include page_image.html %}
+    <main>
+      <p><i>Автор статьи: {{page.author}}</i></p>
+      {{content}}
+      {% include gallery.html %}
+      {% include categories.html %}
+    </main> 
+    {% include dialog-carousel.html 
+       gallery_images=page.gallery_images
+       gallery_captions=page.gallery_captions
+       gallery_sources=page.gallery_sources 
+       caption_classes="d-none d-sm-block"%}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>

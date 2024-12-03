@@ -1,0 +1,21 @@
+{% if page.gallery_images %}
+  <h2>Галерея</h2>
+  Кликните на изображение, чтобы открыть карусель.
+  <div class="gallery justify-content-center justify-content-md-start">
+    {% for image in page.gallery_images %}
+      {% assign source = page.gallery_sources[forloop.index0]%}
+      {% assign caption = page.gallery_captions[forloop.index0]%}
+      <figure>
+        <div class="wrapper">
+          <img src="/assets/{{image}}" alt={{caption}}/>
+        </div>
+        <figcaption>
+          {{caption}} <br>
+          {% if source %}
+          <a href={{source}}>Источник</a>
+          {% endif %}
+        </figcaption>
+      </figure>
+    {% endfor %}
+  </div> 
+{% endif %}

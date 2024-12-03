@@ -1,0 +1,51 @@
+title: Fashion Encyclopedia - всё о моде и стиле
+email: ellaksenofontova@gmail.com
+description: >-
+  Блог о моде и стиле
+baseurl: ""
+url: ""
+github_username:  Ella-Ksenofontova
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - "*.txt"
+
+sass:
+    sass_dir: _sass
+
+lang: ru-RU
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-redirect-from
+
+paginate: 12
+
+encoding: utf-8
+
+timezone: Europe/Moscow
+
+defaults:
+  - 
+    scope:
+      path: ""
+      type: "posts"
+    values: 
+      layout: post
+      title: ""
+      author: "Элла Ксенофонтова"
+
+collections:
+  site_categories:
+    output: true
+    permalink: categories/:name/

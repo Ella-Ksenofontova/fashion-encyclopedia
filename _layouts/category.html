@@ -1,0 +1,58 @@
+---
+layout: default
+---
+  <div class="category-image">
+    <div class="gradient"></div>
+    <div class="category-name">
+      <h1>Категория: {{page.category_name}}</h1>
+    </div>
+  </div>
+  <main>
+    {{content}}
+    <h2>Статьи категории</h2>
+    <div class=" container articles">
+      <div class="row">
+        {% assign cat_name = page.title %}
+        {% for post in site.categories[cat_name] %}
+          {% assign month = post.date | date: "%-m" %}
+          {% assign year = post.date | date: "%Y" %}
+          {% assign day = post.date | date: "%d" %}
+          <div class="wrapper col-sm-6 col-md-4">
+            <article class="card">
+                <div class=" card-body">
+                  <a href="{{ post.url }}">
+                    <h3>{{ post.custom_title }}</h3>
+                  </a>
+                  <span class="blogdate">{{day}} {% case month %}
+                    {% when '1' %}января
+                    {% when '2' %}февраля
+                    {% when '3' %}марта
+                    {% when '4' %}апреля
+                    {% when '5' %}мая
+                    {% when '6' %}июня
+                    {% when '7' %}июля
+                    {% when '8' %}августа
+                    {% when '9' %}сентября
+                    {% when '10' %}октября
+                    {% when '11' %}ноября
+                    {% when '12' %}декабря
+                    {% endcase %} {{year}}</span>
+                  <span class="card-text">{{ post.content |truncatehtml | truncatewords: 10 }}
+                  </span><br>
+                  <a href="{{ post.url }}">
+                    Читать дальше
+                  </a>
+              </div>
+            </article>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% assign size =  site.categories[cat_name] | size %} 
+    {% if size == 0 %}
+      Статей пока нет, но они скоро появятся
+    {% endif %}
+  </main>
+</body>
+</html>

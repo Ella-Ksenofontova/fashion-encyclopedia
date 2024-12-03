@@ -1,0 +1,43 @@
+<div class="carousel-indicators">
+  {% assign size = include.gallery_images.size | minus: 1 %}
+  {% for i in (0..size) %}
+  <button type="button" data-bs-target="#carousel{% if include.id %}_{{include.id}}{% endif %}" data-bs-slide-to={{i}}
+    aria-label="Изображение {{i | plus: 1}}" class="{% if include.active_index == forloop.index0 %}active
+      {% endif %}" aria-current="{{include.active_index == forloop.index0}}"></button>
+  {% endfor %}
+</div>
+<div class="carousel-inner">
+  {% for image in include.gallery_images %}
+  {% assign caption = include.gallery_captions[forloop.index0]%}
+  <div class="carousel-item {% if include.active_index == forloop.index0 %}active
+      {% endif %}">
+    <img src="/assets/{{image}}" alt="{%if caption %}{{caption}}{% else %}{{include.title}}{% endif %}">
+    <div class="carousel-caption">
+      <p class="d-none d-md-block">{{caption}}</p>
+      {% if caption %}
+      <button class="show-description-button d-inline d-md-none" data-bs-container="#carousel{% if include.id %}_{{include.id}}{% endif %}" data-bs-toggle="tooltip" data-bs-placement="top" title="{{caption}}" data-bs-custom-class="description-tooltip">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--bs-link-color)"
+          class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+          <path
+            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
+        </svg>
+      </button>
+
+      {% endif %}
+      {% if include.gallery_sources[forloop.index0] %}
+      <p><a href="{{include.gallery_sources[forloop.index0]}}">Источник</a></p>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+  <button class="carousel-control-prev" type="button"
+    data-bs-target="#carousel{% if include.id %}_{{include.id}}{% endif %}" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Предыдущее изображение</span>
+  </button>
+  <button class="carousel-control-next" type="button"
+    data-bs-target="#carousel{% if include.id %}_{{include.id}}{% endif %}" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Следующее изображение</span>
+  </button>
+</div>

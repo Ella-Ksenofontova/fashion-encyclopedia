@@ -1,0 +1,93 @@
+---
+layout: homepage
+paginate: true
+homepage: 1
+---
+<h1 class="greeting-header menu d-block d-sm-none">Добро пожаловать на сайт блога о моде!</h1>
+<h2 class="new-articles text-center">Свежие статьи</h2>
+<div class="container articles">
+  <div class="row">
+    {% for post in paginator.posts %}
+    {% assign month = post.date | date: "%-m" %}
+    {% assign year = post.date | date: "%Y" %}
+    {% assign day = post.date | date: "%d" %}
+    <div class="wrapper col-sm-6 col-md-4">
+      <article class="card">
+        <div class="card-body">
+          <a href="{{ post.url}}">
+            <h3>{{ post.custom_title }}</h3>
+          </a>
+          <span class="blogdate">{{day}} {% case month %}
+            {% when '1' %}января
+            {% when '2' %}февраля
+            {% when '3' %}марта
+            {% when '4' %}апреля
+            {% when '5' %}мая
+            {% when '6' %}июня
+            {% when '7' %}июля
+            {% when '8' %}августа
+            {% when '9' %}сентября
+            {% when '10' %}октября
+            {% when '11' %}ноября
+            {% when '12' %}декабря
+            {% endcase %} {{year}}</span>
+          <br />
+          <span class="categories">
+            {% assign categories_names = [] %}
+            {% assign site_categories = site.site_categories | map: "title" %}
+            {% for category in post.categories %}
+            {% if site_categories contains category %}
+            {% assign category_name = category | split: "," %}
+            {% assign categories_names = categories_names | concat: category_name %}
+            {% endif %}
+            {% endfor %}
+
+            {% assign length = categories_names | size %}
+
+            {% if length > 1 %}
+            Категории:
+            {% elsif length == 1 %}
+            Категория:
+            {% endif %}
+
+            {% for category in categories_names %}
+            <a href="/categories/{{category| replace: '_', '-'}}">
+              {% assign ru_names = site.site_categories | map: "category_name" %}
+              {% for item in site_categories %}
+                {% if item == category %}
+                  {% assign position = forloop.index0 %}
+                  {% break %} 
+                {% endif %}
+              {% endfor %}
+              {{ru_names[position]}}
+            </a>
+            {%- unless forloop.last -%}
+            ,&nbsp;
+            {%- endunless-%}
+            {% endfor %}
+          </span>
+          <span class="card-text">{{ post.content |truncatehtml | truncatewords: 10 }}</span><br />
+          <a href="{{ post.url }}">
+            Читать дальше
+          </a>
+        </div>
+      </article>
+    </div>
+    {% endfor %}
+
+    <!-- Pagination links -->
+    <div class="pagination justify-content-center">
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous">
+        Предыдущая
+      </a>
+      {% endif %}
+      <span class="page_number ">
+        Страница {{ paginator.page }} из {{ paginator.total_pages }}
+      </span>
+      {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next">Следующая</a>
+      {% endif %}
+    </div>
+  </div>
+</div>

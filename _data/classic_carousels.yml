@@ -1,0 +1,53 @@
+items:
+  -
+    images:
+      - Босоножки.jpg
+      - Балетки.jpg
+      - Лодочки.jpg
+      - Мэри Джейн.jpg
+    sources:
+      - https://baden.ru/catalog/women-shoes/bosonozhki/kz110_010_bosonozhki_zhenskie_nat_kozha_isk_kozha_belyy.html
+      - https://ru.pinterest.com/age_of_innoncence_kidsshoes/
+      - https://www.freepik.com/author/freepik
+      - https://ru.pinterest.com/moon567fa0/
+    title: Обувь, подходящая для женского образа в классическом стиле
+    captions:
+    - Босоножки
+    - Балетки
+    - Лодочки
+    - Мэри Джейн
+  -
+    images:
+      - Кромби.jpg
+      - Коверкот.jpg
+      - Честерфилд.jpg
+    sources:
+      - https://www.pokupkalux.ru/article/palto-muzhskie-korotkie-krombi.html
+      - https://www.pokupkalux.ru/article/palto-muzhskie-chesterfildy.html
+      - https://www.pokupkalux.ru/article/palto-muzhskie-korotkie-koverkot.html
+    title: Пальто в классическом стиле
+    captions:
+    - Кромби
+    - Коверкот
+    - Честерфилд
+  -
+    images:
+      - Дерби.jpg
+      - Оксфорды.jpg
+      - Монки.jpg
+      - Броги.jpg
+      - Лоферы.webp
+    sources:
+      - https://fineshoes.ru/about-shoes/derbi-raznoobrazie-podvidov.html
+      - https://fineshoes.ru/about-shoes/saddle.html
+      - https://britishroom.ru/blog/monki-praktichno-stilno-udobno.html
+      - https://oxbro.ru/brogi-vidy-istoriya-pravila-sochetaniya-i-uhoda-za-obuvyu/
+      - https://kanzler-style.ru/guide/articles/s-chem-nosit-muzhskie-lofery/
+
+    title: Мужская обувь в классическом стиле
+    captions:
+    - Дерби
+    - Оксфорды
+    - Монки
+    - Броги
+    - Лоферы

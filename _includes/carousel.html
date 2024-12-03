@@ -1,0 +1,4 @@
+{% if include.title %} <div class="text-center mt-4 article-carousel-title">{{include.title}}</div> {% endif %}
+<div class="carousel slide article-carousel mb-4" id="carousel_{{include.id}}" data-bs-interval="false"  data-bs-theme="dark">
+  {% include carousel-inner.html active_index=0 gallery_images=include.gallery_images id=include.id caption_classes="d-block" gallery_captions=include.gallery_captions gallery_sources=include.gallery_sources title=include.title %}
+</div>
