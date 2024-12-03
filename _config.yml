@@ -2,8 +2,6 @@ title: Fashion Encyclopedia - всё о моде и стиле
 email: ellaksenofontova@gmail.com
 description: >-
   Блог о моде и стиле
-baseurl: ""
-url: ""
 github_username:  Ella-Ksenofontova
 
 exclude:
@@ -27,10 +25,7 @@ plugins:
   - jekyll-redirect-from
 
 sass:
-  sass_dir: _sass
-  load_paths:
-        - _sass
-        - node_modules
+  sass_dir: ./css
 
 paginate: 12
 
