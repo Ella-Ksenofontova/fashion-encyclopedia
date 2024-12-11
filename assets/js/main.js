@@ -1,24 +1,24 @@
 function resizeImage(image, max_width = 200, max_height = 200) {
-  const ratio = image.naturalWidth / image.naturalHeight;
-  let width = 10;
-  let height = 10;
+  image.addEventListener("onload", () => {
+    const ratio = image.naturalWidth / image.naturalHeight;
+    let width = 10;
+    let height = 10;
 
-  while (true) {
-    let newWidth = width + 10;
-    let newHeight = (1 / ratio) * newWidth;
+    while (true) {
+      let newWidth = width + 10;
+      let newHeight = (1 / ratio) * newWidth;
 
-    if (newWidth > max_width || newHeight > max_height) {
-      break;
+      if (newWidth > max_width || newHeight > max_height) {
+        break;
+      }
+
+      width = newWidth;
+      height = newHeight;
     }
 
-    width = newWidth;
-    height = newHeight;
-  }
-
-  console.log(height);
-
-  image.width = width;
-  image.height = height;
+    image.width = width;
+    image.height = height;
+  });
 }
 
 const images = Array.from(document.querySelectorAll(".gallery img"));
@@ -58,7 +58,7 @@ if (images) {
         }
       }
 
-      if (index >= 0) {  
+      if (index >= 0) {
         carousel.showModal();
         resizeCarouselImages();
       }
@@ -68,7 +68,7 @@ if (images) {
     closeButton.addEventListener("click", () => {
       carousel.close();
     });
-  
+
     window.addEventListener("resize", () => {
       resizeCarouselImages();
     }
