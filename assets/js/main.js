@@ -37,7 +37,7 @@ if (images) {
 
   for (let image of images) {
     if (image.naturalHeight === 0) {
-      image.addEventListener("load", resizeImage);
+      image.addEventListener("load", () => resizeImage(image));
     } else {
       resizeImage(image);
     }
