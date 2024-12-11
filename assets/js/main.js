@@ -15,6 +15,8 @@ function resizeImage(image, max_width = 200, max_height = 200) {
     height = newHeight;
   }
 
+  console.log(height);
+
   image.width = width;
   image.height = height;
 }
