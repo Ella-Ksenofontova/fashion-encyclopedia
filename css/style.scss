@@ -26,6 +26,10 @@ body {
   z-index: 500;
 }
 
+h2 {
+  margin-top: 0.5rem;
+}
+
 .navbar,
 footer {
   background-color: #35b6ff;
@@ -212,6 +216,18 @@ main {
 
   .articles {
     margin: 0 auto;
+    &.category-articles {
+      margin-inline: 0;
+      padding: 0;
+
+      .row {
+        margin-inline: 0;
+
+        .wrapper {
+          transform: translateX(-20px);
+        }
+      }
+    }
 
     .wrapper {
       padding-inline: 20px;
@@ -489,8 +505,6 @@ footer {
 
 table {
   width: calc(100% - 50px);
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 30px;
   border-spacing: 0;
   border-collapse: separate;

@@ -10,7 +10,7 @@ layout: default
   <main>
     {{content}}
     <h2>Статьи категории</h2>
-    <div class=" container articles">
+    <div class=" container articles category-articles">
       <div class="row">
         {% assign cat_name = page.title %}
         {% for post in site.categories[cat_name] %}
