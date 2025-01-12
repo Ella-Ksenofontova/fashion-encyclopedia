@@ -30,3 +30,4 @@ _site
 Gemfile.lock
 
 debug.yml
+.jekyll-metadata
