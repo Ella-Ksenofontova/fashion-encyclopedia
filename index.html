@@ -13,6 +13,7 @@ homepage: 1
     {% assign day = post.date | date: "%d" %}
     <div class="wrapper col-sm-6 col-md-4">
       <article class="card">
+        <img src="{{site.baseurl}}/assets/{{post.page_image_bg}}" class="card-img-top" alt="{{post.custom_title}}">
         <div class="card-body">
           <a href="{{site.baseurl}}{{post.url}}">
             <h3>{{ post.custom_title }}</h3>
