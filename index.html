@@ -6,13 +6,13 @@ homepage: 1
 <h1 class="greeting-header menu d-block d-sm-none">Добро пожаловать на сайт блога о моде!</h1>
 <h2 class="new-articles text-center">Свежие статьи</h2>
 <div class="container articles">
-  <div class="row">
+  <div class="row align-items-stretch">
     {% for post in paginator.posts %}
     {% assign month = post.date | date: "%-m" %}
     {% assign year = post.date | date: "%Y" %}
     {% assign day = post.date | date: "%d" %}
-    <div class="wrapper col-sm-6 col-md-4">
-      <article class="card">
+    <div class="wrapper col-sm-6 col-xl-4">
+      <article class="card h-100">
         <img src="{{site.baseurl}}/assets/{{post.page_image_bg}}" class="card-img-top" alt="{{post.custom_title}}">
         <div class="card-body">
           <a href="{{site.baseurl}}{{post.url}}">
@@ -68,6 +68,8 @@ homepage: 1
             {% endfor %}
           </span>
           <span class="card-text">{{ post.content |truncatehtml | truncatewords: 10 }}</span><br />
+        </div>
+        <div class="card-footer">
           <a href="{{site.baseurl}}{{ post.url }}">
             Читать дальше
           </a>
