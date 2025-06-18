@@ -67,7 +67,7 @@ homepage: 1
             {%- endunless-%}
             {% endfor %}
           </span>
-          <span class="card-text">{{ post.content |truncatehtml | truncatewords: 10 }}</span><br />
+          <span class="card-text">{{ post.description |truncatehtml | truncatewords: 10 }}</span><br />
         </div>
         <div class="card-footer">
           <a href="{{site.baseurl}}{{ post.url }}">

@@ -1,5 +1,4 @@
 function resizeImage(image, max_width = 200, max_height = 200) {
-  console.log(max_height);
   const ratio = image.naturalWidth / image.naturalHeight;
   let width = 10;
   let height = 10;
