@@ -679,6 +679,10 @@ table tr:last-child td:last-child {
       }
     }
   }
+
+  main, .page-image .wrapper {
+    padding-inline: 10vw;
+  }
 }
 
 @media screen and (max-height: 250px) {
