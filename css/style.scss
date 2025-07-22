@@ -1,5 +1,5 @@
 --- 
----
+--- 
 @import "_custom-variables.scss";
 @import "bootstrap/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
@@ -550,8 +550,28 @@ table tr:last-child td:last-child {
   background-color: hsl(202, 100%, 87%);
 }
 
+/* Часть кода далее взята отсюда: https://doka.guide/a11y/skip-link/ */
+
+.skip-link {
+  display: block;
+  position: absolute;
+  z-index: 15;
+  top: 0;
+  left: 0;
+  padding: 10px 15px;
+  color: #35b6ff;
+  background: white;
+  transform: translateY(-100%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
 @include media-breakpoint-down(sm) {
-  #carousel[open], .article-carousel {
+
+  #carousel[open],
+  .article-carousel {
     padding: 5px;
     height: 50vh;
 
@@ -679,7 +699,8 @@ table tr:last-child td:last-child {
     }
   }
 
-  main, .page-image .wrapper {
+  main,
+  .page-image .wrapper {
     padding-inline: 10vw;
   }
 }
